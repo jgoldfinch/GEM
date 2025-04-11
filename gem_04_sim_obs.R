@@ -64,7 +64,7 @@ for (k in 1:n.visits){
     
     ## Are females and males present?
       yg[k,j,i] <- ifelse(any(yc[,j-1,i]>1),rbinom(1,yc[1,j,i],pgenetic),NA)
-      ygf[k,j,i] <-rhyper(1,nf[1,j,i],nf[1,j,i],yg[k,j,i])
+      ygf[k,j,i] <-rhyper(1,nf[1,j,i],nm[1,j,i],yg[k,j,i])
       ygm[k,j,i] <-yg[k,j,i]-ygf[k,j,i]
     }   
   }
