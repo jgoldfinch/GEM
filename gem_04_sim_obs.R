@@ -57,7 +57,7 @@ for (k in 1:n.visits){
       
     ## Time 2 and beyond
     ## Is the species present?
-      yp[k,j,i] <- rbinom(1,ifelse(z[1,j,i]>1,1,0),1-((1-p)^(nf[1,j,i]+nm[1,j,i])))
+      yp[k,j,i] <- rbinom(1,ifelse(z[1,j-1,i]>1,1,0),1-((1-p)^(nf[1,j,i]+nm[1,j,i])))
       
     ## Are multiple individuals present?
       yc[k,j,i] <- ifelse(any(yp[,j-1,i]==1),rbinom(1,nf[1,j,i]+nm[1,j,i],p),NA)
